@@ -22,7 +22,7 @@ import { COLORS, buildCellList } from "../utils";
 const App = () => {
   const [activeColor, setActiveColor] = useState(COLORS[0]);
   const [cellList, setCellList] = useState(buildCellList());
-  const handleClick = activeColor;
+  // const handleClick = activeColor;
   /**
    * Using useState you need to create:
    *
@@ -41,7 +41,7 @@ const App = () => {
         activeColor={activeColor}
         cellList={cellList}
         setCellList={setCellList}
-        handleClick={handleClick}
+        // handleClick={handleClick}
       />
       {/* ActionPanel needs to be passed activeColor, cellList, and setCellList */}
       <ActionPanel

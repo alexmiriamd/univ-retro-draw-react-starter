@@ -27,14 +27,16 @@ const Grid = (props) => {
    */
   return (
     <div className="grid">
-      {cellList.map((color, idx) => {
+      {cellList.map((cell, idx) => {
+
         return (
           <Cell
             key={`grid- ${idx}`}
-            color={color}
+            color={cell.color}
             handleClick={() => {
               const newCellList = [...cellList];
-              newCellList[idx] = activeColor;
+              newCellList[idx].color = activeColor;
+              console.log(newCellList[idx].color);
               setCellList(newCellList);
             }}
           />
