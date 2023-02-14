@@ -1,18 +1,22 @@
-import React from 'react';
+import React from "react";
 
 /**
  * The Cell component represents the fundamental "clickable object" in
  * retro-draw, there will be <Cell /> in both Palette and Grid.
- * 
+ *
  * Props passed in will include:
  * - color, which is the background color of the cell
  * - isActive, which will be set only on cells in the Palette
- * - handleClick, which will be a function to run when the cell has been clicked on 
+ * - handleClick, which will be a function to run when the cell has been clicked on
  */
 const Cell = (props) => {
+  const color = props.color;
+  const isActive = props.isActive;
+  const handleClick = props.handleClick;
   /* Create constants for color, isActive, and handleClick, reading the value off of props */
 
   /**
+  
    * For the template you need to
    * - set the className to be "cell active" if the value of isActive
    *    is true
@@ -21,7 +25,13 @@ const Cell = (props) => {
    * - set the onClick property to be equal to the handleClick function
    *    passed in with the props
    */
-  return <div className="cell"></div>
-}
+  return (
+    <div
+      className={isActive ? "cell active" : "cell"}
+      onClick={handleClick}
+      style={{ backgroundColor: color }}
+    ></div>
+  );
+};
 
 export default Cell;
