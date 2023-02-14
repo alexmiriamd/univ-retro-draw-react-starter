@@ -57,12 +57,12 @@ const ActionPanel = (props) => {
       <button
       onClick={() => {
         const newCellList = buildCellList();
-        cellList.map(() => {
-          color = newCellList.color
-          // ? :
+        cellList.map((color, idx) => {
+          color = newCellList.color;
+          cellList[idx].color ? newCellList[idx].color = cellList[idx].color : newCellList[idx].color = activeColor;
 
         })
-        
+        setCellList(newCellList);
        
       }}
       >fill empty</button>
